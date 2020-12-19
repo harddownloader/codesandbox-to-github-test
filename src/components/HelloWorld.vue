@@ -2,6 +2,8 @@
   <div class="hello">
     {{ name }}
     {{ getNewName }}
+    {{ inputVal }}
+    <input type="text" v-model="inputVal" />
     <button @click="this.changeName">Change Name</button>
   </div>
 </template>
@@ -14,10 +16,11 @@ export default {
   },
   data: () => ({
     name: "john",
+    inputVal: null,
   }),
   methods: {
     changeName() {
-      this.name = "carl";
+      this.name = this.input;
     },
   },
   computed: {
